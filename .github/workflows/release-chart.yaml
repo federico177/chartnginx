@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - 'chart-release-*'
+      - 'v*'
 
 jobs:
   release:
