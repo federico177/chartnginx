@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      serviceAccountName: {{ .Release.Name }}-nginx-serviceaccount
+      containers:
+        - name: {{ .Release.Name }}-nginx
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          ports:
+          - name: http
+            containerPort: {{ .Values.service.port }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - mountPath: "/mnt/data"
+              name: nginx-volume
+      volumes:
+        - name: nginx-volume
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-nginx-pvc
