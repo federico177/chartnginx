@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Helm Lint
         run: |
-          helm lint .
+          helm lint /charts .
 
       - name: Run Helm Template (Validate YAML)
         run: |
