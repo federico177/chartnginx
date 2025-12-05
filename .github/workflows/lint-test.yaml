@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Helm Lint
         run: |
-          helm lint /home/fede/chartnginx/charts/chartnginx .
+          helm lint ./charts/chartnginx
 
       - name: Run Helm Template (Validate YAML)
         run: |
