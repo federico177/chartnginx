@@ -29,4 +29,4 @@ jobs:
 
       - name: Run Helm Template (Validate YAML)
         run: |
-          helm template my-release . > /dev/null
+          helm template my-release ./charts/chartnginx > /dev/null
