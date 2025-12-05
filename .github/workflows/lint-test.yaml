@@ -1,0 +1,32 @@
+name: Lint and Test Charts
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read 
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.x
+
+      - name: Run Helm Lint
+        run: |
+          helm lint .
+
+      - name: Run Helm Template (Validate YAML)
+        run: |
+          helm template my-release . > /dev/null
