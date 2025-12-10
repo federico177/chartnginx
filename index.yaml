@@ -3,6 +3,16 @@ entries:
   chartnginx:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-12-10T09:52:33.717744274Z"
+    description: A Helm chart for Kubernetes
+    digest: 6654a6e61a0bb5f5b0756e8afef8623570a0d8bfec22245ee8d9a80883559d2f
+    name: chartnginx
+    type: application
+    urls:
+    - https://github.com/federico177/chartnginx/releases/download/chartnginx-1.2.5/chartnginx-1.2.5.tgz
+    version: 1.2.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-12-09T08:17:39.170310499Z"
     description: A Helm chart for Kubernetes
     digest: 2f41ee352d3c6fc53d170887be6517e6aa8ab94b6c324db3cd88d610d90818d4
@@ -81,4 +91,4 @@ entries:
     urls:
     - https://github.com/federico177/chartnginx/releases/download/chartnginx-1.1.7/chartnginx-1.1.7.tgz
     version: 1.1.7
-generated: "2025-12-09T08:17:39.170339253Z"
+generated: "2025-12-10T09:52:33.717792463Z"
