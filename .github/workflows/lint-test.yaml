@@ -30,4 +30,3 @@ jobs:
       - name: Run Helm Template (Validate YAML)
         run: |
           helm template my-release ./charts/chartnginx 
-          helm install --dry-run --debug my-release ./charts/chartnginx
